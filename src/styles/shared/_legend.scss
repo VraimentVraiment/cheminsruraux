@@ -1,0 +1,28 @@
+span.legend-icon {
+  width: 1.5em;
+  min-width: 1.5em;
+  min-height: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  margin-right: 1em;
+  vertical-align: middle;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+
+  &.path-icon {
+    background: url("@/icons/path.svg");
+
+    &.qualifie {
+      filter: invert(88%) sepia(15%) saturate(1776%) hue-rotate(330deg) brightness(101%) contrast(104%);
+    }
+
+    &.nonqualifie {
+      filter: invert(72%) sepia(13%) saturate(571%) hue-rotate(9deg) brightness(99%) contrast(87%);
+    }
+
+    &.cyclable {
+      filter: invert(88%) sepia(6%) saturate(2778%) hue-rotate(63deg) brightness(97%) contrast(71%);
+    }
+  }
+}

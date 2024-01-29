@@ -1,0 +1,25 @@
+a {
+  text-underline-offset: 2px;
+  color: $color-font;
+  transition: color 0.25s ease;
+
+  &:visited {
+    color: $color-font;
+  }
+
+  &:hover {
+    color: $color-font-hover;
+
+    & img {
+      filter: invert(0.5) sepia(1) hue-rotate(180deg) saturate(5) brightness(0.7) contrast(2);
+    }
+  }
+
+  &:active {
+    color: $color-font-hover;
+
+    & img {
+      filter: invert(0.5) sepia(1) hue-rotate(180deg) saturate(5) brightness(0.7) contrast(1);
+    }
+  }
+}
