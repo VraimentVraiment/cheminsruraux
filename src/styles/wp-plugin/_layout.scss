@@ -9,6 +9,16 @@
     margin: 2em 0 1em !important;
   }
 
+  .legend-content {
+    display: flex !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+
+    @media screen and (max-width: 900px) {
+      flex-direction: column !important;
+    }
+  }
+
   .legend-line {
     font-size: 1.5rem !important;
   }
@@ -49,43 +59,63 @@
 }
 
 @media screen and (min-width: 901px) {
-  .vv-post-container {
-    width: 50% !important;
-    max-width: 50% !important;
-    margin-left: 5% !important;
-    margin-right: 2.5% !important;
-  }
-
   .vv-map-container {
     height: 100vh !important;
     padding: max(10vh, 4rem) 0 !important;
     max-width: none !important;
-    width: 40% !important;
-    margin-right: 2.5% !important;
-    margin-left: 2.5% !important;
   }
 }
 
-@media screen and (min-width: 1050px) {
+@media screen and (min-width: 901px) {
   .vv-post-container {
-    width: 45% !important;
-    max-width: 45% !important;
+    width: 46.25% !important;
+    max-width: 46.25% !important;
+    margin-left: 2.5% !important;
+    margin-right: 2.5% !important;
+  }
+
+  .vv-map-container {
+    width: 46.25% !important;
+    margin-right: 2.5% !important;
+  }
+}
+
+@media screen and (min-width: 1251px) {
+  .vv-post-container {
+    width: 43.75% !important;
+    max-width: 43.75% !important;
     margin-left: 5% !important;
+    margin-right: 2.5% !important;
+  }
+
+  .vv-map-container {
+    width: 43.75% !important;
     margin-right: 5% !important;
   }
 }
-
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1501px) {
   .vv-post-container {
     width: 40% !important;
     max-width: 40% !important;
-    margin-left: 10% !important;
-    margin-right: 5% !important;
+    margin-left: 8.75% !important;
+    margin-right: 2.5% !important;
+  }
+
+  .vv-map-container {
+    width: 40% !important;
+    margin-right: 8.75% !important;
+  }
+}
+@media screen and (min-width: 1701px) {
+  .vv-post-container {
+    width: 35% !important;
+    max-width: 35% !important;
+    margin-left: 11.25% !important;
+    margin-right: 7.5% !important;
   }
 
   .vv-map-container {
     width: 35% !important;
-    margin-right: 5% !important;
-    margin-left: 5% !important;
+    margin-right: 11.25% !important;
   }
 }

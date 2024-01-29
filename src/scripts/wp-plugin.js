@@ -67,7 +67,7 @@ window.addEventListener('load', () => {
     const { top: markTop } = topMark.getBoundingClientRect();
 
     const postBottom = window.innerHeight - postTop - postContainer.offsetHeight;
-    const isMapBelowMark = mapBottom - markTop;
+    const isMapBelowMark = mapBottom - markTop - window.innerHeight / 2;
 
     if (isMapBelowMark < 0) {
       container.classList.add('--beforemark')

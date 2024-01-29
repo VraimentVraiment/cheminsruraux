@@ -3,6 +3,8 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite';
 import eslint from 'vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
+import postcssCombineMediaQuery from 'postcss-combine-media-query';
+import postcssCombineDuplicatedSelectors from 'postcss-combine-duplicated-selectors';
 
 const projectDir = path.dirname(new URL(import.meta.url).pathname);
 const srcDir = path.resolve(projectDir, 'src');
@@ -20,6 +22,14 @@ export default ({
       manifest: true,
       rollupOptions: {
         input: path.resolve(srcDir, entryPath),
+      },
+    },
+    css: {
+      postcss: {
+        plugins: [
+          postcssCombineMediaQuery,
+          postcssCombineDuplicatedSelectors,
+        ],
       },
     },
     resolve: {
