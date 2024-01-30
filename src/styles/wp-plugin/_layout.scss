@@ -54,7 +54,9 @@
 
 @media screen and (max-width: 900px) {
   .vv-map-container {
+    height: 100vh !important;
     min-height: calc(100vh - 4rem) !important;
+    max-height: calc(100vh - 4rem) !important;
   }
 }
 
@@ -93,6 +95,7 @@
     margin-right: 5% !important;
   }
 }
+
 @media screen and (min-width: 1501px) {
   .vv-post-container {
     width: 40% !important;
@@ -106,6 +109,7 @@
     margin-right: 8.75% !important;
   }
 }
+
 @media screen and (min-width: 1701px) {
   .vv-post-container {
     width: 35% !important;

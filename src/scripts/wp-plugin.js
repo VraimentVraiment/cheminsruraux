@@ -2,20 +2,18 @@ import '@/styles/wp-plugin/index.scss';
 
 import { renderMap } from '@/scripts/map/';
 
-window.addEventListener('load', () => {
+let wasMapLoaded = false;
 
-  const container = document.querySelector('.entry-content');
-  const mapContainer = document.querySelector('.vv-map-container');
-  const mapboxContainer = document.getElementById('vv-map-mapbox-container');
-  const postContainer = document.querySelector('.vv-post-container');
-  const topMark = document.querySelector('.vv-map__top-mark');
-  const teleportMarks = document.querySelectorAll('.vv-map__teleport-mark');
+function loadMap() {
+
   const flyToButtons = document.querySelectorAll('.vv-map-spot-link');
-
-  let currentTpMark = null;
+  const mapboxContainer = document.getElementById('vv-map-mapbox-container');
 
   try {
     const { flyTo } = renderMap(mapboxContainer);
+
+    wasMapLoaded = true;
+
     flyToButtons.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
@@ -26,17 +24,28 @@ window.addEventListener('load', () => {
   } catch (e) {
     console.error(e);
   }
+}
+
+window.addEventListener('load', () => {
+
+  const container = document.querySelector('.entry-content');
+  const mapContainer = document.querySelector('.vv-map-container');
+  const postContainer = document.querySelector('.vv-post-container');
+  const topMark = document.querySelector('.vv-map__top-mark');
+  const teleportMarks = document.querySelectorAll('.vv-map__teleport-mark');
+
+  let currentTpMark = null;
 
   handleMapLayout();
   window.addEventListener('resize', handleMapLayout);
   window.addEventListener('scroll', handleMapLayout);
 
   function handleMapLayout() {
-      if (window.innerWidth < 901) {
-        teleportMark();
-      } else {
-        setMapFixed();
-      }
+    if (window.innerWidth < 901) {
+      teleportMark();
+    } else {
+      setMapFixed();
+    }
   }
 
   function teleportMark() {
@@ -52,6 +61,9 @@ window.addEventListener('load', () => {
     if (intersectingMark && intersectingMark !== currentTpMark) {
       currentTpMark = intersectingMark;
       currentTpMark.appendChild(mapContainer)
+      if (!wasMapLoaded) {
+        loadMap();
+      }
     }
   }
 
@@ -75,6 +87,9 @@ window.addEventListener('load', () => {
     } else {
       container.classList.remove('--beforemark')
       container.classList.add('--aftermark')
+      if (!wasMapLoaded) {
+        loadMap();
+      }
     }
 
     if (postBottom > 0) {
