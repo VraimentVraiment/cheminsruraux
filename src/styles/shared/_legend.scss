@@ -14,15 +14,15 @@ span.legend-icon {
     background: url("@/icons/path.svg");
 
     &.qualifie {
-      filter: invert(88%) sepia(15%) saturate(1776%) hue-rotate(330deg) brightness(101%) contrast(104%);
+      filter: invert(60%) sepia(98%) saturate(1352%) hue-rotate(13deg) brightness(113%) contrast(86%);
     }
 
     &.nonqualifie {
-      filter: invert(72%) sepia(13%) saturate(571%) hue-rotate(9deg) brightness(99%) contrast(87%);
+      filter: invert(41%) sepia(10%) saturate(3936%) hue-rotate(339deg) brightness(99%) contrast(94%);
     }
 
     &.cyclable {
-      filter: invert(88%) sepia(6%) saturate(2778%) hue-rotate(63deg) brightness(97%) contrast(71%);
+      filter: invert(41%) sepia(7%) saturate(2945%) hue-rotate(120deg) brightness(92%) contrast(89%);
     }
   }
 }
