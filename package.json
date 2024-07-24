@@ -7,7 +7,8 @@
     "dev:static": "vite -c vite.config.static.js",
     "build:static": "vite build -c vite.config.static.js --emptyOutDir",
     "build:wp-plugin": "vite build -c vite.config.wp-plugin.js  --emptyOutDir",
-    "build:all": "npm run build:static && npm run build:wp-plugin",
+    "build:kirby-plugin": "vite build -c vite.config.kirby-plugin.js  --emptyOutDir",
+    "build:all": "npm run build:static && npm run build:wp-plugin && npm run build:kirby-plugin",
     "preview:static": "vite preview -c vite.config.static.js"
   },
   "dependencies": {
