@@ -1,6 +1,17 @@
+.vv-map-title {
+  font-size: 1rem;
+  @media screen and (min-width: 1448px) {
+    font-size: 1.5rem !important;
+  }
+}
+
 .vv-map-legend {
   .legend-title {
     margin: 2em 0 1em !important;
+    font-size: 1rem !important;
+    @media screen and (min-width: 1448px) {
+      font-size: 1.25rem !important;
+    }
   }
 
   .legend-content {
@@ -16,10 +27,18 @@
 
   .legend-credits {
     margin: 1rem 0 0 !important;
+    font-size: 1rem !important;
+    @media screen and (min-width: 1448px) {
+      font-size: 1.25rem !important;
+    }
   }
 
   .legend-line {
     margin: 0 !important;
+    font-size: 1rem !important;
+    @media screen and (min-width: 1448px) {
+      font-size: 1.25rem !important;
+    }
   }
 }
 
@@ -43,14 +62,6 @@
     height: 100vh !important;
     min-height: calc(100vh - 4rem) !important;
     max-height: calc(100vh - 4rem) !important;
-  }
-}
-
-@media screen and (min-width: 901px) {
-  .vv-map-container {
-    height: 100vh !important;
-    padding: max(10vh, 4rem) 0 !important;
-    max-width: none !important;
   }
 }
 
