@@ -7,10 +7,10 @@
 
 .vv-map-legend {
   .legend-title {
-    margin: 2em 0 1em !important;
+    margin: 1em 0 .5em !important;
     font-size: 1rem !important;
     @media screen and (min-width: 1448px) {
-      font-size: 1.25rem !important;
+      font-size: 1rem !important;
     }
   }
 
@@ -18,7 +18,7 @@
     display: flex !important;
     justify-content: space-between !important;
     flex-wrap: wrap !important;
-    gap: 1em !important;
+    gap: .25em !important;
 
     @media screen and (max-width: 900px) {
       flex-direction: column !important;
@@ -27,24 +27,25 @@
 
   .legend-credits {
     margin: 1rem 0 0 !important;
-    font-size: 1rem !important;
+    font-size: .85rem !important;
+    @media screen and (min-width: 901px) and (max-width: 1447px) {
+      padding-right: 10rem;
+    }
     @media screen and (min-width: 1448px) {
-      font-size: 1.25rem !important;
+      font-size: 1rem !important;
     }
   }
 
   .legend-line {
     margin: 0 !important;
     font-size: 1rem !important;
-    @media screen and (min-width: 1448px) {
-      font-size: 1.25rem !important;
-    }
   }
 }
 
 .vv-map-container {
   display: flex;
   flex-direction: column;
+  height: 100vh !important;
 
   #vv-map-mapbox-container {
     flex-grow: 1;
@@ -59,13 +60,27 @@
 
 @media screen and (max-width: 900px) {
   .vv-map-container {
-    height: 100vh !important;
     min-height: calc(100vh - 4rem) !important;
     max-height: calc(100vh - 4rem) !important;
   }
 }
+@media screen and (min-width: 901px) and (max-width: 1447px) {
+  
+  .vv-map-container {
+    padding-top: 7rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 1448px) {
+  .vv-map-container {
+    padding-bottom: max(6vh, 2rem);
+    padding-top: calc(6rem + max(6vh, 2rem));
+  }
+}
 
 @media screen and (min-width: 901px) {
+  
   .vv-post-container {
     width: 46.25% !important;
     max-width: 46.25% !important;
@@ -76,6 +91,14 @@
   .vv-map-container {
     width: 46.25% !important;
     margin-right: 2.5% !important;
+  }
+
+  .post-nav-to-top-container {
+    padding-right: 1rem !important;
+  }
+
+  .post-nav-to-top {
+    transform: none !important;
   }
 }
 
@@ -119,4 +142,8 @@
     width: 35% !important;
     margin-right: 11.25% !important;
   }
+}
+
+.vv-map-container button {
+  padding: 0 !important;
 }
